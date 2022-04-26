@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fish
+    uniqueID: 2720171137
+    locked: 0
+  - name: Predator
+    uniqueID: 4266499535
+    locked: 0

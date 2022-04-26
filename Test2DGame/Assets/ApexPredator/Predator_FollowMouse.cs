@@ -133,7 +133,7 @@ public class Predator_FollowMouse : MonoBehaviour
         bool fishSpawned = false;
         while (!fishSpawned)
         {
-            Vector3 fishPos = new Vector3(Random.Range(-(transform.position.x)-8f, (transform.position.x)+8f), Random.Range(-(transform.position.y) - 8f, (transform.position.y) + 8f), 0f);
+            Vector3 fishPos = new Vector3(Random.Range(-(transform.position.x)-8f, (transform.position.x)+8f), Random.Range(-(transform.position.y) - 8f, (transform.position.y) + 8f), -1f);
             if ((fishPos - transform.position).magnitude < 3)
             {
                 continue;
