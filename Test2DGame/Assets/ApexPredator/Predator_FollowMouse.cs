@@ -39,7 +39,6 @@ public class Predator_FollowMouse : MonoBehaviour
     {
         predatorRigidbody2D = GetComponent<Rigidbody2D>();
         predatorAnimator = GetComponent<Animator>();
-        SpawnFish();
     }
 
     // Update is called once per frame
@@ -149,8 +148,6 @@ public class Predator_FollowMouse : MonoBehaviour
     {
         predatorAnimator.SetTrigger("Eat");
         Destroy(collision.gameObject);
-        SpawnFish();
-        SpawnFish();
-        SpawnFish();
+        
     }
 }
