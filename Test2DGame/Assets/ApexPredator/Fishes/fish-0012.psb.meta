@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 60ff10b42764028479246323223cd12b
+guid: af03ef7b6e35dd047903b61720154226
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -100,9 +100,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 62
-      height: 32
-    spriteID: 03aa2b4b6ad26e64da1ef4659f462d9d
+      width: 112
+      height: 88
+    spriteID: 2824b0d92b43ec54ab75737ff07a91b0
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -112,7 +112,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2, y: -15}
+    uvTransform: {x: -4, y: -16}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -120,7 +120,7 @@ ScriptedImporter:
   importHiddenLayers: 0
   importedTextureWidth: 128
   importedTextureHeight: 128
-  documentSize: {x: 64, y: 64}
+  documentSize: {x: 128, y: 128}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
@@ -136,7 +136,7 @@ ScriptedImporter:
     spriteName: Layer 1
     isGroup: 0
     parentIndex: -1
-    spriteID: 03aa2b4b6ad26e64da1ef4659f462d9d
+    spriteID: 2824b0d92b43ec54ab75737ff07a91b0
     layerID: 2
     mosaicPosition: {x: 4, y: 4}
   characterData:
@@ -145,7 +145,7 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
   generateGOHierarchy: 0
-  textureAssetName: fish Texture
-  prefabAssetName: fish Prefab
-  spriteLibAssetName: fish Sprite Lib
+  textureAssetName: fish-0012 Texture
+  prefabAssetName: fish-0012 Prefab
+  spriteLibAssetName: fish-0012 Sprite Lib
   secondarySpriteTextures: []
