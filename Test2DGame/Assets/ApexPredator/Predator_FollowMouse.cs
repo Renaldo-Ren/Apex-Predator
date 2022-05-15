@@ -8,6 +8,7 @@ public class Predator_FollowMouse : MonoBehaviour
     //public float smoothTime = 0.3f;
     //public float minDistance = 1;
     public float speed = 1;
+    public StamminaBar staminaBar;
 
     private float dir;
     float runSpeedModifier = 2f;
@@ -19,12 +20,12 @@ public class Predator_FollowMouse : MonoBehaviour
     private Animator predatorAnimator;
 
     private bool predaIsFacingRight = false;
-    private bool predaIsJumping = false;
-    private bool predaIsGrounded = false;
+    // private bool predaIsJumping = false;
+    // private bool predaIsGrounded = false;
 
-    public Transform groundCheck;
-    public float groundCheckRadius;
-    public LayerMask ground;
+    // public Transform groundCheck;
+    // public float groundCheckRadius;
+    // public LayerMask ground;
     public float moveInputX;
     public float moveInputY;
     public float xVal;
@@ -39,6 +40,7 @@ public class Predator_FollowMouse : MonoBehaviour
     {
         predatorRigidbody2D = GetComponent<Rigidbody2D>();
         predatorAnimator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -57,7 +59,8 @@ public class Predator_FollowMouse : MonoBehaviour
         //predatorAnimator.SetFloat("Amount", movement.magnitude);
 
         transform.position = transform.position + movement * velocity * Time.deltaTime;
-        if (Input.GetMouseButtonDown(1))
+        
+        if (Input.GetMouseButtonDown(1) && staminaBar.stamina.staminaAmount > 10f)
         {
             isRunning = true;
         }
@@ -108,8 +111,11 @@ public class Predator_FollowMouse : MonoBehaviour
         
         if (isRunning)
         {
-            xVal *= runSpeedModifier;
-            yVal *= runSpeedModifier;
+            if(staminaBar.stamina.staminaAmount > 10f){
+                xVal *= runSpeedModifier;
+                yVal *= runSpeedModifier;
+            }
+            
         }
 
         Vector2 targetVelocity = new Vector2(xVal, yVal);
@@ -146,8 +152,14 @@ public class Predator_FollowMouse : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        predatorAnimator.SetTrigger("Eat");
-        Destroy(collision.gameObject);
         
+        if (collision.CompareTag("bossTrigger"))
+            return;
+        else
+        {
+            predatorAnimator.SetTrigger("Eat");
+            Destroy(collision.gameObject);
+        }
+            
     }
 }

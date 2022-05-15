@@ -3071,7 +3071,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
       - m_Target: {fileID: 2004083402}
         m_TargetAssemblyTypeName: Loading, Assembly-CSharp
         m_MethodName: Play_Button
