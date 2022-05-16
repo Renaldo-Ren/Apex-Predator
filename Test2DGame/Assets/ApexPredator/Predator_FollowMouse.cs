@@ -10,6 +10,8 @@ public class Predator_FollowMouse : MonoBehaviour
     public float speed = 1;
     public StamminaBar staminaBar;
 
+    public AudioSource playSound;
+
     private float dir;
     float runSpeedModifier = 2f;
     bool isRunning = false;
@@ -159,6 +161,7 @@ public class Predator_FollowMouse : MonoBehaviour
         {
             predatorAnimator.SetTrigger("Eat");
             Destroy(collision.gameObject);
+            playSound.Play();
         }
             
     }
