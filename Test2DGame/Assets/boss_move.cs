@@ -29,7 +29,9 @@ public class boss_move : MonoBehaviour
 
     private void Chase()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        Vector2 accuratePlayerPos = player.transform.position;
+        accuratePlayerPos.y = accuratePlayerPos.y - 4f;
+        transform.position = Vector2.MoveTowards(transform.position, accuratePlayerPos, speed * Time.deltaTime);
     }
 
     private void ReturnStartPoint()
@@ -39,13 +41,13 @@ public class boss_move : MonoBehaviour
 
     private void Flip()
     {
-        if (transform.position.x > player.transform.position.x)
+        if (transform.position.x > player.transform.position.x+6f)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             //FlipBoss();
             //bossFacingRight = true;
         }
-        else if (transform.position.x <= player.transform.position.x)
+        else if (transform.position.x <= player.transform.position.x-6f)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             //FlipBoss();

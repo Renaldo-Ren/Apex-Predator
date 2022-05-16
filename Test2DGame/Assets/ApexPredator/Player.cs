@@ -32,9 +32,19 @@ public class Player : MonoBehaviour
         //Starving();
     }
 
-    private void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        ScoreScript.scoreValue += 10;
-        health += .05f;
+        if (collision.CompareTag("bossTrigger"))
+            return;
+        else if (collision.CompareTag("jellyFish"))
+            health -= .05f;
+        else if (collision.CompareTag("bossJaw"))
+            health -= .1f;
+        else
+        {
+            ScoreScript.scoreValue += 10;
+            health += .05f;
+        }
+        
     }
 }

@@ -10,7 +10,7 @@ public class Predator_FollowMouse : MonoBehaviour
     public float speed = 1;
     public StamminaBar staminaBar;
 
-    public AudioSource playSound;
+    public AudioSource playSound,jellySFX;
 
     private float dir;
     float runSpeedModifier = 2f;
@@ -154,8 +154,11 @@ public class Predator_FollowMouse : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.CompareTag("bossTrigger"))
+            return;
+        else if (collision.CompareTag("jellyFish"))
+            jellySFX.Play();
+        else if (collision.CompareTag("bossJaw"))
             return;
         else
         {
